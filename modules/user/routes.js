@@ -14,7 +14,7 @@ module.exports = {
             '/delete:id': { handler: 'deleteUser', noAuth: false, isRoot: false},
         }
     },
-    loyality: {
+    loyalities: {
         get: {
             '/sup': {handler: 'sup', noAuth: false, isRoot: false}
         }

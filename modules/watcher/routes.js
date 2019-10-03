@@ -1,5 +1,5 @@
 module.exports = {
-    watcher: {
+    watchers: {
         get: {
             
         },

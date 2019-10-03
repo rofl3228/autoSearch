@@ -1,0 +1,4 @@
+{
+    "auth" : { "enabled" : true },
+    "watcher" : { "enabled" : true }
+}

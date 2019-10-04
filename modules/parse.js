@@ -10,10 +10,9 @@ module.exports.kolesaParse = async function(url) {
             return pages;
         });
     }
-    let numPages;
 
-    getNumPages(url).then((res) => {
-        numPages = res;
+    return getNumPages(url).then(async (res) => {
+        let numPages = res;
         let promises = [];
         let carsJson = [];
         for (let i = 1; i < numPages; i++) {
@@ -52,21 +51,10 @@ module.exports.kolesaParse = async function(url) {
             );
             //resolve(carsJson);
         } //end of for loop
-        Promise.all(promises)
-        .then((results) => {
-            console.log(carsJson.length);
-            return carsJson;
-        })
-    }).catch(err => {
+        const results = await Promise.all(promises);
+        console.log(carsJson.length);
+        return carsJson;
+    }).catch((err) => {
         console.log('Got error from getNumResults ', err);
     });
-    // working above!
-            
-        
-        //console.log(carsJson.length);
-            //console.log(carsJson);
-        
-        //arr = carsJson
-    
-
 };

@@ -9,8 +9,12 @@ let url = 'https://kolesa.kz/cars/toyota/camry/almaty/?price[to]=5%20000%20000';
 
 
 
-let arr = parser.kolesaParse(url);
-console.log(arr);
+let arr = parser.kolesaParse(url).then((res) => {
+
+
+    console.log(res);
+});
+
 // let get = async function(res) {
 //     res = parser.kolesaParse(url);
 //     return await res;
